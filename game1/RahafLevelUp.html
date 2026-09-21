@@ -512,6 +512,25 @@
     }
     openOverlay(storyOverlay);
   }
+
+  beginBtn.addEventListener('click', ()=> openLevelIntro(0));
+  replayBtn.addEventListener('click', ()=>{
+    closeOverlay(profileOverlay);
+    unlockedLevel = 1; completed = new Set();
+    renderTrack();
+    mapScreen.style.display = 'block';
+  });
+  loseMap.addEventListener('click', ()=>{
+    closeOverlay(loseOverlay);
+    running = false;
+    gameWrap.style.display = 'none';
+    mapScreen.style.display = 'block';
+    renderTrack();
+  });
+  loseRetry.addEventListener('click', ()=>{
+    closeOverlay(loseOverlay);
+    startLevel(currentLevelIdx);
+  });
  
  
 
