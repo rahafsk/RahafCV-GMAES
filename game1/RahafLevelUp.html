@@ -151,6 +151,15 @@
     display:flex; align-items:center; gap:10px; border:1px solid var(--panel-edge); border-radius:8px;
     padding:9px 10px; cursor:pointer; background: rgba(255,255,255,0.02);
   }
+
+  .buildOpt:active{ background: rgba(61,220,132,0.08); }
+  .buildOpt[disabled], .buildOpt.disabled{ opacity:0.4; cursor:not-allowed; }
+  .swatch{ width:30px; height:30px; border-radius:7px; flex:0 0 auto; }
+  .buildOpt .info{ flex:1; min-width:0; }
+  .buildOpt .info b{ font-size:12.5px; display:block; }
+  .buildOpt .info small{ color:var(--muted); font-size:11px; line-height:1.4; display:block; }
+  .buildOpt .cost{ font-family:var(--font-pixel); font-size:10px; color:var(--amber); white-space:nowrap; }
+  .buildOpt .cost.sell{ color: var(--accent); }
  
 
   
