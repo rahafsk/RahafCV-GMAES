@@ -346,6 +346,15 @@
       const last = PATH_META.segs[PATH_META.segs.length-1];
       return { x:last.x2, y:last.y2, done:true };
     }
+
+     for(const s of PATH_META.segs){
+      if(dist <= s.start+s.len){
+        const t = s.len === 0 ? 0 : (dist-s.start)/s.len;
+        return { x:s.x1+(s.x2-s.x1)*t, y:s.y1+(s.y2-s.y1)*t, done:false };
+      }
+    }
+    return { x:0, y:0, done:true };
+  }
  
 
   
