@@ -740,6 +740,20 @@
  
     updateHUD();
   }
+
+  function roundedPath(){
+    ctx.strokeStyle = '#1a2740';
+    ctx.lineWidth = 34;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(PATH[0][0], PATH[0][1]);
+    for(let i=1;i<PATH.length;i++) ctx.lineTo(PATH[i][0], PATH[i][1]);
+    ctx.stroke();
+    ctx.strokeStyle = '#233252';
+    ctx.lineWidth = 26;
+    ctx.stroke();
+  }
  
  
 
