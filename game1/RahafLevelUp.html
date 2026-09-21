@@ -658,6 +658,15 @@
     const def = ENEMIES[type];
     enemies.push({ type, hp: def.hp, maxHp: def.hp, dist:0, speed: def.speed, slowUntil:0, stunUntil:0 });
   }
+
+  function update(now, dt){
+    if(gameOver) return;
+ 
+    if(waveStarted){
+      while(spawnQueue.length && (now - waveStartTime) >= spawnQueue[0].t){
+        spawnEnemy(spawnQueue.shift().type);
+      }
+    }
  
  
 
