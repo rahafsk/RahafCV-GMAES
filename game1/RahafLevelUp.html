@@ -773,6 +773,24 @@
     ctx.fillStyle = level.accent || '#3DDC84';
     for(let k=0;k<3;k++) ctx.fillRect(-16,-22+k*18,32,7);
     ctx.restore();
+
+     // pads
+    PADS.forEach((pad, idx)=>{
+      const t = towers[idx];
+      ctx.save();
+      ctx.translate(pad[0], pad[1]);
+      if(t){
+        const def = TOWERS[t.id];
+        ctx.fillStyle = def.color;
+        ctx.beginPath(); ctx.arc(0,0,16,0,Math.PI*2); ctx.fill();
+        ctx.fillStyle = '#0D1321';
+        ctx.font = '9px monospace';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(def.id.slice(0,3).toUpperCase(), 0, 1);
+        if(!def.support){
+          ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+          ctx.beginPath(); ctx.arc(0,0,def.range,0,Math.PI*2); ctx.stroke();
+        }
  
  
  
