@@ -40,3 +40,13 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
     overscroll-behavior: none;
   }
+
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body{
+    display:flex; flex-direction:column; align-items:center; min-height:100%;
+    background:
+      radial-gradient(circle at 12% 10%, rgba(61,220,132,0.08), transparent 45%),
+      radial-gradient(circle at 88% 90%, rgba(255,180,84,0.06), transparent 40%),
+      var(--bg-deep);
+    overflow-x:hidden;
+  }
