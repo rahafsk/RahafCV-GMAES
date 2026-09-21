@@ -90,3 +90,9 @@
     box-shadow: 0 6px 0 var(--accent-dim); transition: transform .08s ease;
   }
   .start-btn:active{ transform: translateY(4px); box-shadow: 0 2px 0 var(--accent-dim); }
+  .track{ margin-top: 28px; padding: 4px 0 4px 18px; border-left: 2px dashed var(--panel-edge); display:flex; flex-direction:column; gap:16px; }
+  .node{ position:relative; display:flex; align-items:center; gap:12px; cursor:pointer; padding:10px 12px; border-radius:8px; border:1px solid transparent; }
+  .node::before{ content:''; position:absolute; left:-24px; top:50%; transform:translateY(-50%); width:10px; height:10px; border-radius:50%; background: var(--panel-edge); border: 2px solid var(--bg-deep); }
+  .node.done::before{ background: var(--accent); }
+  .node.locked{ opacity:0.45; cursor:not-allowed; }
+  .node:not(.locked):hover{ background: rgba(61,220,132,0.06); border-color: var(--panel-edge); }
