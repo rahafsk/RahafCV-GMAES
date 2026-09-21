@@ -608,6 +608,29 @@
         money += refund; towers[padIdx] = null; updateHUD(); closeBuildSheet();
       });
       buildOptions.appendChild(row);
+
+      } else {
+      buildSheetTitle.textContent = "Pad " + (padIdx+1) + " — choose a defense";
+      level.unlock.forEach(id=>{
+        const def = TOWERS[id];
+        const affordable = money >= def.cost;
+        const row = document.createElement('div');
+        row.className = 'buildOpt' + (affordable ? '' : ' disabled');
+        row.innerHTML = `<div class="swatch" style="background:${def.color}"></div>
+          <div class="info"><b>${def.name}</b><small>${def.desc}</small></div>
+          <div class="cost">$${def.cost}</div>`;
+        if(affordable){
+          row.addEventListener('click', ()=>{
+            money -= def.cost;
+            towers[padIdx] = { id: def.id, cd:0 };
+            updateHUD(); closeBuildSheet();
+          });
+        }
+        buildOptions.appendChild(row);
+      });
+    }
+    buildSheet.classList.add('show');
+  }
  
  
 
