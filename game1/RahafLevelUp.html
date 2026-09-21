@@ -566,6 +566,15 @@
     lastTime = performance.now();
     if(!running){ running = true; requestAnimationFrame(loop); }
   }
+
+  function updateHUD(){
+    chipMoney.textContent = "$ " + money;
+    const remaining = spawnQueue.length + enemies.length;
+    chipEnemies.textContent = "Enemies: " + remaining;
+    integrityFill.style.width = Math.max(0, (integrity/level.integrityMax)*100) + "%";
+    if(integrity/level.integrityMax < 0.35){ integrityFill.style.background = 'linear-gradient(90deg,#FF5C5C,#ff9d9d)'; }
+    else { integrityFill.style.background = 'linear-gradient(90deg, var(--accent), #7CE0C4)'; }
+  }
  
  
 
