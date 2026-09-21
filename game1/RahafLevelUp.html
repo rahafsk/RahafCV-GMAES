@@ -484,6 +484,23 @@
     storyContinue.onclick = ()=>{ closeOverlay(storyOverlay); startLevel(i); };
     openOverlay(storyOverlay);
   }
+
+  function openLevelOutro(i){
+    const lvl = LEVELS[i];
+    storyKicker.className = 'kicker';
+    storyKicker.textContent = "LEVEL " + (i+1) + " CLEARED";
+    storyTitle.textContent = lvl.title;
+    storyMeta.textContent = lvl.org;
+    storyText.textContent = lvl.text;
+    storyBadges.innerHTML = lvl.badges.map(b=>`<span class="badge">${b}</span>`).join('');
+    if(i+1 < LEVELS.length){
+      storyContinue.textContent = "NEXT: LEVEL " + (i+2) + " ▶";
+      storyContinue.onclick = ()=>{
+        closeOverlay(storyOverlay);
+        gameWrap.style.display = 'none';
+        mapScreen.style.display = 'block';
+        renderTrack();
+      };
  
  
 
