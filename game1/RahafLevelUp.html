@@ -727,6 +727,19 @@
       setTimeout(()=> openOverlay(loseOverlay), 150);
       return;
     }
+
+     if(waveStarted && spawnQueue.length===0 && enemies.length===0){
+      gameOver = true; running = false;
+      const idx = LEVELS.indexOf(level);
+      completed.add(idx+1);
+      unlockedLevel = Math.max(unlockedLevel, idx+2);
+      updateHUD();
+      setTimeout(()=> openLevelOutro(idx), 200);
+      return;
+    }
+ 
+    updateHUD();
+  }
  
  
 
