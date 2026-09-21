@@ -325,6 +325,27 @@
     churn:    { name:'Churn', hp:46, speed:66, color:'#C77DFF', r:11, reward:16, leak:8 },
     legacy:   { name:'Legacy System', hp:320, speed:26, color:'#5b6b85', r:20, reward:120, leak:40, boss:true }
   };
+
+  /* Shared path (zigzag across the board) and build pads */
+  const PATH = [[-40,100],[180,100],[180,300],[480,300],[480,120],[760,120],[760,440],[1000,440]];
+  const PADS = [[90,60],[270,205],[330,400],[560,205],[620,60],[860,280],[880,500],[620,470]];
+ 
+  function buildPathMeta(path){
+    const segs = []; let total = 0;
+    for(let i=0;i<path.length-1;i++){
+      const [x1,y1]=path[i], [x2,y2]=path[i+1];
+      const len = Math.hypot(x2-x1,y2-y1);
+      segs.push({x1,y1,x2,y2,len,start:total});
+      total += len;
+    }
+    return { segs, total };
+  }
+  const PATH_META = buildPathMeta(PATH);
+  function pointAtDistance(dist){
+    if(dist >= PATH_META.total){
+      const last = PATH_META.segs[PATH_META.segs.length-1];
+      return { x:last.x2, y:last.y2, done:true };
+    }
  
 
   
