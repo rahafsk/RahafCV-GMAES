@@ -31,3 +31,12 @@
       --text:#EAEFFA; --muted:#8291ab; --accent:#2fbd71; --accent-dim:#1c4d33; --amber:#e79a3a; --danger:#e14545;
     }
   }
+
+  *{ box-sizing: border-box; }
+  html,body{
+    height:100%; margin:0; background: var(--bg-deep); color: var(--text);
+    font-family: var(--font-mono);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    overscroll-behavior: none;
+  }
