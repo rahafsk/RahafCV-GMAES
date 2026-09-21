@@ -501,6 +501,17 @@
         mapScreen.style.display = 'block';
         renderTrack();
       };
+
+      } else {
+      storyContinue.textContent = "VIEW FULL PROFILE ▶";
+      storyContinue.onclick = ()=>{
+        closeOverlay(storyOverlay);
+        gameWrap.style.display = 'none';
+        openOverlay(profileOverlay);
+      };
+    }
+    openOverlay(storyOverlay);
+  }
  
  
 
