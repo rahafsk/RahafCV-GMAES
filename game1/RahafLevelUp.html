@@ -160,6 +160,12 @@
   .buildOpt .info small{ color:var(--muted); font-size:11px; line-height:1.4; display:block; }
   .buildOpt .cost{ font-family:var(--font-pixel); font-size:10px; color:var(--amber); white-space:nowrap; }
   .buildOpt .cost.sell{ color: var(--accent); }
+
+  /* overlays */
+  .overlay{ position:fixed; inset:0; background: rgba(6,9,16,0.82); display:none; align-items:center; justify-content:center; padding:16px; z-index:20;
+    padding-top: calc(16px + env(safe-area-inset-top, 0px)); padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .overlay.show{ display:flex; }
+  .card{ width:100%; max-width:560px; max-height: 88vh; overflow:auto; background: var(--panel); border:1px solid var(--panel-edge); border-radius:10px; box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
  
 
   
