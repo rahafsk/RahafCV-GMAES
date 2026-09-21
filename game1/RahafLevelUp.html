@@ -96,3 +96,13 @@
   .node.done::before{ background: var(--accent); }
   .node.locked{ opacity:0.45; cursor:not-allowed; }
   .node:not(.locked):hover{ background: rgba(61,220,132,0.06); border-color: var(--panel-edge); }
+
+  .node .tag{ font-family:var(--font-pixel); font-size:8px; color:var(--bg-deep); background: var(--amber); padding:4px 6px; border-radius:4px; white-space:nowrap; }
+  .node.done .tag{ background: var(--accent); }
+  .node .meta{ display:flex; flex-direction:column; }
+  .node .meta b{ font-size:14px; font-weight:600; }
+  .node .meta small{ color:var(--muted); font-size:11.5px; }
+  .node .check{ margin-left:auto; color:var(--accent); font-family:var(--font-pixel); font-size:12px; }
+
+  
+
