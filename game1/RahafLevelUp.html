@@ -791,6 +791,16 @@
           ctx.strokeStyle = 'rgba(255,255,255,0.06)';
           ctx.beginPath(); ctx.arc(0,0,def.range,0,Math.PI*2); ctx.stroke();
         }
+
+        } else {
+        ctx.strokeStyle = 'rgba(61,220,132,0.55)';
+        ctx.setLineDash([4,4]);
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(0,0,16,0,Math.PI*2); ctx.stroke();
+        ctx.setLineDash([]);
+      }
+      ctx.restore();
+    });
  
  
  
