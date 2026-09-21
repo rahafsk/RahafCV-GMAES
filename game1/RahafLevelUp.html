@@ -641,6 +641,17 @@
     const cy = (e.clientY - rect.top) / rect.height * H;
     return { x:cx, y:cy };
   }
+
+  canvas.addEventListener('pointerdown', (e)=>{
+    if(!level) return;
+    const p = canvasPointFromEvent(e);
+    let best = -1, bestD = 34;
+    PADS.forEach((pad, idx)=>{
+      const d = Math.hypot(pad[0]-p.x, pad[1]-p.y);
+      if(d < bestD){ bestD = d; best = idx; }
+    });
+    if(best >= 0) openBuildSheet(best);
+  });
  
  
 
