@@ -364,6 +364,25 @@
     }
     return q;
   }
+
+  /* ---------------- Level data ---------------- */
+  const LEVELS = [
+    {
+      tag:"LEVEL 1", title:"Bachelor of Science, Computer Science",
+      org:"Oman College of Management and Technology", meta:"Graduated January 2024",
+      text:"Where it starts. A Computer Science degree, and the first defenses I ever learned to build.",
+      badges:["Foundations","Problem solving","Curiosity"],
+      unlock:['firewall'], startMoney:130, integrityMax:100,
+      spawn: buildSpawnQueue(['deadline','deadline','deadline','deadline','deadline','deadline','deadline','deadline'], 1300, 1000)
+    },
+    {
+      tag:"LEVEL 2", title:"AI - IT Intern",
+      org:"Bima  ·  January 2024 – April 2025",
+      text:"Hands-on with API keys across AI projects — automation, data handling, and supporting AI-based solutions. The AI Scanner comes online here.",
+      badges:["API integrations","Automation","AI tools"],
+      unlock:['firewall','ai'], startMoney:150, integrityMax:100,
+      spawn: buildSpawnQueue(['deadline','bug','bug','deadline','bug','deadline','bug','bug','deadline','bug'], 1150, 900)
+    },
  
 
   
