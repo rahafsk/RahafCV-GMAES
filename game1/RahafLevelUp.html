@@ -801,6 +801,17 @@
       }
       ctx.restore();
     });
+
+    // beams
+    const now = performance.now();
+    for(const b of beams){
+      const a = Math.max(0, (b.until - now)/110);
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.strokeStyle = b.color; ctx.lineWidth = 2.4;
+      ctx.beginPath(); ctx.moveTo(b.x1,b.y1); ctx.lineTo(b.x2,b.y2); ctx.stroke();
+      ctx.restore();
+    }
  
  
  
