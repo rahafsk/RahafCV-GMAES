@@ -540,6 +540,25 @@
   let level, money, integrity, towers, enemies, spawnQueue, waveStarted, waveStartTime;
   let beams, lastTime, running=false, gameOver=false;
   let selectedPad = -1;
+
+  function startLevel(i){
+    level = LEVELS[i];
+    hudLevel.textContent = String(i+1);
+    levelPathLabel.textContent = "~/wave-" + (i+1);
+    chipTitle.textContent = level.tag.split(' ').slice(0,2).join(' ');
+    money = level.startMoney;
+    integrity = level.integrityMax;
+    towers = new Array(PADS.length).fill(null);
+    enemies = [];
+    spawnQueue = level.spawn.map(s=>({...s}));
+    waveStarted = false;
+    gameOver = false;
+    beams = [];
+    selectedPad = -1;
+    buildSheet.classList.remove('show');
+    startWaveBtn.classList.remove('hide');
+    startWaveBtn.disabled = false;
+    hint.textContent = "tap a glowing pad to build a defense";
  
  
 
