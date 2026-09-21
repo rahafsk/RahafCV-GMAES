@@ -697,6 +697,18 @@
         const d = Math.hypot(pad[0]-en.x, pad[1]-en.y);
         if(d <= bestD){ bestD = d; target = en; }
       }
+
+       }
+      if(target){
+        let dmg = def.dmg;
+        if(def.counters && target.type === def.counters) dmg *= def.counterMult;
+        target.hp -= dmg;
+        if(def.slow) target.slowUntil = now + def.slowDur*1000;
+        if(def.stun) target.stunUntil = now + def.stun*1000;
+        t.cd = def.rate*1000;
+        beams.push({ x1:pad[0], y1:pad[1], x2:target.x, y2:target.y, until: now+110, color: def.color });
+      }
+    }
  
  
 
