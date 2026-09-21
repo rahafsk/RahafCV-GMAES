@@ -531,6 +531,15 @@
     closeOverlay(loseOverlay);
     startLevel(currentLevelIdx);
   });
+
+  /* ---------------- Game engine ---------------- */
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+ 
+  let level, money, integrity, towers, enemies, spawnQueue, waveStarted, waveStartTime;
+  let beams, lastTime, running=false, gameOver=false;
+  let selectedPad = -1;
  
  
 
