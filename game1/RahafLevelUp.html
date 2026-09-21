@@ -682,6 +682,21 @@
         enemies.splice(i,1);
       }
     }
+
+    // towers act
+    for(let pi=0; pi<towers.length; pi++){
+      const t = towers[pi];
+      if(!t) continue;
+      const def = TOWERS[t.id];
+      if(def.support) continue;
+      t.cd -= dt*1000;
+      if(t.cd > 0) continue;
+      const pad = PADS[pi];
+      let target = null, bestD = def.range;
+      for(const en of enemies){
+        const d = Math.hypot(pad[0]-en.x, pad[1]-en.y);
+        if(d <= bestD){ bestD = d; target = en; }
+      }
  
  
 
