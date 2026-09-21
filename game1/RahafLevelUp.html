@@ -754,6 +754,14 @@
     ctx.lineWidth = 26;
     ctx.stroke();
   }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const grad = ctx.createLinearGradient(0,0,0,H);
+    grad.addColorStop(0,'#0a1020'); grad.addColorStop(1,'#131c33');
+    ctx.fillStyle = grad; ctx.fillRect(0,0,W,H);
+ 
+    roundedPath();
  
  
 
