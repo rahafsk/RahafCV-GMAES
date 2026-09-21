@@ -631,6 +631,16 @@
     }
     buildSheet.classList.add('show');
   }
+
+  function closeBuildSheet(){ buildSheet.classList.remove('show'); selectedPad = -1; }
+  buildClose.addEventListener('click', closeBuildSheet);
+ 
+  function canvasPointFromEvent(e){
+    const rect = canvas.getBoundingClientRect();
+    const cx = (e.clientX - rect.left) / rect.width * W;
+    const cy = (e.clientY - rect.top) / rect.height * H;
+    return { x:cx, y:cy };
+  }
  
  
 
