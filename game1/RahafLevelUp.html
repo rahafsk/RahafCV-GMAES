@@ -70,3 +70,17 @@
     background: linear-gradient(180deg, #16203a, #101828); border-bottom:1px solid var(--panel-edge);
     font-family:var(--font-mono); font-size:11px; color:var(--muted);
   }
+  .term-bar .tdot{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+  .term-bar .tdot:nth-child(1){ background:#FF5F56; }
+  .term-bar .tdot:nth-child(2){ background:#FFBD2E; }
+  .term-bar .tdot:nth-child(3){ background:#27C93F; }
+  .term-bar .path{ margin-left:8px; }
+ 
+  .hero{ padding: 28px 22px 24px; }
+  .hero h1{
+    font-family:var(--font-pixel); font-size: clamp(15px, 4vw, 24px); line-height:1.7;
+    margin: 0 0 12px; color: var(--accent); text-shadow: 0 0 18px rgba(61,220,132,0.35);
+  }
+  .hero p{ color: var(--muted); font-size:14px; line-height:1.7; max-width:62ch; margin:0 0 18px;}
+  .cursor{ display:inline-block; width:9px; height:16px; background:var(--accent); vertical-align:-2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
