@@ -812,6 +812,25 @@
       ctx.beginPath(); ctx.moveTo(b.x1,b.y1); ctx.lineTo(b.x2,b.y2); ctx.stroke();
       ctx.restore();
     }
+
+     // enemies
+    for(const en of enemies){
+      const def = ENEMIES[en.type];
+      ctx.save();
+      ctx.translate(en.x, en.y);
+      ctx.fillStyle = def.color;
+      ctx.beginPath(); ctx.arc(0,0, def.r, 0, Math.PI*2); ctx.fill();
+      if(performance.now() < en.slowUntil){ ctx.strokeStyle = '#7CE0C4'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(0,0,def.r+3,0,Math.PI*2); ctx.stroke(); }
+      if(performance.now() < en.stunUntil){ ctx.strokeStyle = '#FF6EC7'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(0,0,def.r+6,0,Math.PI*2); ctx.stroke(); }
+      // hp bar
+      const w = def.r*2;
+      ctx.fillStyle = 'rgba(0,0,0,0.5)';
+      ctx.fillRect(-w/2, -def.r-10, w, 4);
+      ctx.fillStyle = '#FF5C5C';
+      ctx.fillRect(-w/2, -def.r-10, w*Math.max(0,en.hp/def.maxHp), 4);
+      ctx.restore();
+    }
+  }
  
  
  
