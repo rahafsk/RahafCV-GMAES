@@ -667,6 +667,21 @@
         spawnEnemy(spawnQueue.shift().type);
       }
     }
+
+    // move enemies
+    for(let i=enemies.length-1; i>=0; i--){
+      const en = enemies[i];
+      let speed = en.speed;
+      if(now < en.stunUntil) speed = 0;
+      else if(now < en.slowUntil) speed *= 0.55;
+      en.dist += speed * dt;
+      const pos = pointAtDistance(en.dist);
+      en.x = pos.x; en.y = pos.y;
+      if(pos.done){
+        integrity -= ENEMIES[en.type].leak;
+        enemies.splice(i,1);
+      }
+    }
  
  
 
