@@ -583,6 +583,13 @@
     startWaveBtn.classList.add('hide');
     hint.textContent = "incoming — keep building if you can afford it";
   });
+
+   /* ----- build sheet interactions ----- */
+  function growthBonusTotal(){
+    let bonus = 0;
+    for(const t of towers){ if(t && TOWERS[t.id].support) bonus += TOWERS[t.id].bonusPerKill; }
+    return bonus;
+  }
  
  
 
