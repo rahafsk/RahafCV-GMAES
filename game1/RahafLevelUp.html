@@ -449,6 +449,22 @@
 
   const profileOverlay = document.getElementById('profileOverlay');
   const replayBtn = document.getElementById('replayBtn');
+
+  function renderTrack(){
+    track.innerHTML = '';
+    LEVELS.forEach((lvl, i)=>{
+      const n = i+1;
+      const isDone = completed.has(n);
+      const isLocked = n > unlockedLevel;
+      const div = document.createElement('div');
+      div.className = 'node' + (isDone ? ' done' : '') + (isLocked ? ' locked' : '');
+      div.innerHTML = `<div class="tag">LVL ${n}</div>
+        <div class="meta"><b>${lvl.title}</b><small>${lvl.org}</small></div>
+        <div class="check">${isDone ? '✓' : (isLocked ? '🔒' : '▶')}</div>`;
+      if(!isLocked) div.addEventListener('click', ()=> openLevelIntro(i));
+      track.appendChild(div);
+    });
+  }
  
  
 
