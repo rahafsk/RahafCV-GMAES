@@ -601,6 +601,13 @@
       const row = document.createElement('div');
       row.className = 'buildOpt';
       row.innerHTML = `<div class="swatch" style="background:${TOWERS[occupied.id].color}"></div>
+
+      <div class="info"><b>Sell this defense</b><small>${TOWERS[occupied.id].desc}</small></div>
+        <div class="cost sell">+$${refund}</div>`;
+      row.addEventListener('click', ()=>{
+        money += refund; towers[padIdx] = null; updateHUD(); closeBuildSheet();
+      });
+      buildOptions.appendChild(row);
  
  
 
