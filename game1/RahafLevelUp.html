@@ -575,6 +575,14 @@
     if(integrity/level.integrityMax < 0.35){ integrityFill.style.background = 'linear-gradient(90deg,#FF5C5C,#ff9d9d)'; }
     else { integrityFill.style.background = 'linear-gradient(90deg, var(--accent), #7CE0C4)'; }
   }
+
+  startWaveBtn.addEventListener('click', ()=>{
+    if(waveStarted) return;
+    waveStarted = true;
+    waveStartTime = performance.now();
+    startWaveBtn.classList.add('hide');
+    hint.textContent = "incoming — keep building if you can afford it";
+  });
  
  
 
