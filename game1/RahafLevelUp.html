@@ -355,6 +355,15 @@
     }
     return { x:0, y:0, done:true };
   }
+   function buildSpawnQueue(order, gap, startDelay, extraBeforeBoss){
+    const q = []; let t = startDelay;
+    for(const type of order){
+      if(type === 'legacy' && extraBeforeBoss) t += extraBeforeBoss;
+      q.push({ type, t });
+      t += gap;
+    }
+    return q;
+  }
  
 
   
