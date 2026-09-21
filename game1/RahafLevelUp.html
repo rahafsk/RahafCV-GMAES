@@ -652,6 +652,12 @@
     });
     if(best >= 0) openBuildSheet(best);
   });
+
+  /* ----- simulation ----- */
+  function spawnEnemy(type){
+    const def = ENEMIES[type];
+    enemies.push({ type, hp: def.hp, maxHp: def.hp, dist:0, speed: def.speed, slowUntil:0, stunUntil:0 });
+  }
  
  
 
