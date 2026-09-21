@@ -84,3 +84,9 @@
   .hero p{ color: var(--muted); font-size:14px; line-height:1.7; max-width:62ch; margin:0 0 18px;}
   .cursor{ display:inline-block; width:9px; height:16px; background:var(--accent); vertical-align:-2px; animation: blink 1s steps(1) infinite; }
   @keyframes blink{ 50%{ opacity:0; } }
+  .start-btn{
+    font-family:var(--font-pixel); font-size:11px; color:var(--bg-deep); background: var(--accent);
+    border:none; padding:14px 20px; border-radius:6px; cursor:pointer; letter-spacing:0.5px;
+    box-shadow: 0 6px 0 var(--accent-dim); transition: transform .08s ease;
+  }
+  .start-btn:active{ transform: translateY(4px); box-shadow: 0 2px 0 var(--accent-dim); }
