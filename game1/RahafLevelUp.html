@@ -23,3 +23,11 @@
     --font-pixel: 'Press Start 2P', monospace;
     --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
   }
+
+  :root:not([data-theme="light"]){ color-scheme: dark; }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#0D1321; --bg-deep:#080C16; --panel:#121A2B; --panel-edge:#23304a;
+      --text:#EAEFFA; --muted:#8291ab; --accent:#2fbd71; --accent-dim:#1c4d33; --amber:#e79a3a; --danger:#e14545;
+    }
+  }
