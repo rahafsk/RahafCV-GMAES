@@ -293,9 +293,30 @@
         <a class="link-chip" href="tel:+96892388446">☎ +968 9238 8446</a>
       </div>
       <div class="card-actions" style="margin-top:22px;"><button class="ghost-btn" id="replayBtn">↺ Play again</button></div>
+
     </div>
   </div>
 </div>
+
+<script>
+(function(){
+  "use strict";
+ 
+  /* ---------------- Tower & enemy definitions ---------------- */
+  const TOWERS = {
+    firewall: { id:'firewall', name:'Firewall Node', cost:40, dmg:9, range:95, rate:0.6, color:'#3DDC84',
+      desc:'Cybersecurity fundamentals — steady baseline defense.' },
+    ai:       { id:'ai', name:'AI Scanner', cost:65, dmg:6, range:115, rate:0.45, color:'#4FC3F7',
+      counters:'bug', counterMult:1.8, desc:'AI &amp; ML tooling — hits Bugs hard.'.replace('&amp;','&') },
+    soc:      { id:'soc', name:'SOC Turret', cost:60, dmg:7, range:100, rate:0.55, color:'#FFB454',
+      counters:'vuln', counterMult:1.8, desc:'Red/Blue team drills — extra damage to Vulnerabilities.' },
+    growth:   { id:'growth', name:'Growth Booster', cost:70, dmg:0, range:0, rate:0, support:true, bonusPerKill:6, color:'#C77DFF',
+      desc:'Sales-process optimization — boosts income from every kill.' },
+    sql:      { id:'sql', name:'SQL Guard', cost:55, dmg:5, range:85, rate:0.8, slow:0.45, slowDur:1.4, color:'#7CE0C4',
+      desc:'SQL Server / EF Core — slows anything nearby.' },
+    jwt:      { id:'jwt', name:'JWT Shield', cost:100, dmg:14, range:100, rate:0.5, stun:0.6, color:'#FF6EC7',
+      desc:'Token-based auth — heavy hits that stun on contact.' }
+  };
  
 
   
