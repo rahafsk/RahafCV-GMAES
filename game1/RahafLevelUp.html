@@ -559,6 +559,13 @@
     startWaveBtn.classList.remove('hide');
     startWaveBtn.disabled = false;
     hint.textContent = "tap a glowing pad to build a defense";
+
+    gameWrap.style.display = 'block';
+    mapScreen.style.display = 'none';
+    updateHUD();
+    lastTime = performance.now();
+    if(!running){ running = true; requestAnimationFrame(loop); }
+  }
  
  
 
