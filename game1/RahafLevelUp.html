@@ -762,6 +762,18 @@
     ctx.fillStyle = grad; ctx.fillRect(0,0,W,H);
  
     roundedPath();
+
+    
+    // core / server at path end
+    const core = PATH[PATH.length-1];
+    ctx.save();
+    ctx.translate(Math.min(core[0]-40, 920), core[1]);
+    ctx.fillStyle = '#1a2740';
+    ctx.fillRect(-22,-30,44,60);
+    ctx.fillStyle = level.accent || '#3DDC84';
+    for(let k=0;k<3;k++) ctx.fillRect(-16,-22+k*18,32,7);
+    ctx.restore();
+ 
  
  
 
