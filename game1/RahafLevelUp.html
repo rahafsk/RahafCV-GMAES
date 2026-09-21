@@ -465,6 +465,25 @@
       track.appendChild(div);
     });
   }
+
+  renderTrack();
+ 
+  function openOverlay(el){ el.classList.add('show'); }
+  function closeOverlay(el){ el.classList.remove('show'); }
+ 
+  function openLevelIntro(i){
+    const lvl = LEVELS[i];
+    currentLevelIdx = i;
+    storyKicker.className = 'kicker';
+    storyKicker.textContent = lvl.tag;
+    storyTitle.textContent = lvl.title;
+    storyMeta.textContent = lvl.org;
+    storyText.textContent = lvl.text;
+    storyBadges.innerHTML = lvl.badges.map(b=>`<span class="badge">${b}</span>`).join('');
+    storyContinue.textContent = "DEFEND LEVEL " + (i+1) + " ▶";
+    storyContinue.onclick = ()=>{ closeOverlay(storyOverlay); startLevel(i); };
+    openOverlay(storyOverlay);
+  }
  
  
 
